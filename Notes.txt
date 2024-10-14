@@ -1,3 +1,16 @@
 Python Notes
 ____________
 
+Compiler:ranslates everything at once (e.g., C) and then runs the code.
+Interpreter: Translates one line at a time (e.g., Python) and keep on executing the code line by line
+
+Python code  ->  Interpretor -> Machine Code
+
+Modules: Code written by somebody and you use it in your code
+
+PIP: Package manager by which we can install modules. (pip install module_name)
+
+Calculator: REPL (Read, Evaluate, Print, Loop)
+type python in terminal it will act as calculator.
+
+Comments: # (Shortcut: cltr + /)  ||   """....."""
