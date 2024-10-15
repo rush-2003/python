@@ -14,3 +14,6 @@ Calculator: REPL (Read, Evaluate, Print, Loop)
 type python in terminal it will act as calculator.
 
 Comments: # (Shortcut: cltr + /)  ||   """....."""
+
+Variables uses RAM to store data
+
