@@ -15,5 +15,18 @@ type python in terminal it will act as calculator.
 
 Comments: # (Shortcut: cltr + /)  ||   """....."""
 
+______________________________________________________________________________________________________________________
+
 Variables uses RAM to store data
 
+______________________________________________________________________________________________________________________
+
+
+F-strings: When we want to use variables in strings
+           f"Rudalph {variable}"
+
+Normal way: "Rudalph + variable + Gonsalves"
+
+Chaning: replace(task).replace(task)....
+
+______________________________________________________________________________________________________________________
