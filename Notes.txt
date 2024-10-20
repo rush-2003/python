@@ -30,3 +30,8 @@ Normal way: "Rudalph + variable + Gonsalves"
 Chaning: replace(task).replace(task)....
 
 ______________________________________________________________________________________________________________________
+
+
+Print Statement argument:
+print("value") -> Ek new line aa jati hai
+print("value", end="") -> New line nahi aayegi
