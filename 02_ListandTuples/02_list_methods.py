@@ -23,7 +23,7 @@ print(x)
 print(numbers)
 
 #removes by value the 1st occurrance, returns nothing
-x=numbers.remove(10) , 
+x=numbers.remove(10) 
 print(x)
 print(numbers)
 

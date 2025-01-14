@@ -10,7 +10,7 @@ print (os.listdir())
 # ____________________________________________________________________________
 
 import pyfiglet
-ascii_art = pyfiglet.figlet_format("Udya Movie Baghaila yeshil pillu?")
+ascii_art = pyfiglet.figlet_format("I am learning python")
 print(ascii_art)
 
 
