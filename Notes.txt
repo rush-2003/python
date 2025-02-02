@@ -36,3 +36,21 @@ Print Statement argument:
 print("value") -> Ek new line aa jati hai
 print("value", end="") -> New line nahi aayegi
 
+_______________________________________________________________________________________________________________________
+
+Virtual Environment
+
+Golbal modules
+
+Project 1           Project 2
+Venv                venv
+local module-a p1     local module-a p2
+local module-b p2     local module-b p2
+
+Commands -> Important
+
+________________________________________________________________________________________________________________________
+
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
