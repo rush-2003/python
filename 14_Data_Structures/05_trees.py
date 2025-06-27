@@ -111,8 +111,11 @@ class BinarySearchTreeNode:
 # print(treeNode.data, treeNode.left.data, treeNode.right.data)
 
 
+
+
+
 #Making a Tree out of array
-numbers = [10,11,9,12,8,13,7]
+numbers = [40, 20, 60, 10, 30, 50, 70]
 treeRootNode = BinarySearchTreeNode(numbers[0])
 for element in range(1, len(numbers)):
     treeRootNode.add_child(numbers[element])
@@ -127,14 +130,47 @@ for element in range(1, len(numbers)):
 # 2. In Order = Left Root Right
 # 3. Post Order = Left Right Root
 
-#Preorder traversal
-print(treeRootNode.preorder_traversal())
+# #Preorder traversal
+# print(treeRootNode.preorder_traversal())
  
 #Inorder traversal
 print(treeRootNode.inorder_traversal())
 
 #Postorder traversal
-print(treeRootNode.postorder_traversal())
+# print(treeRootNode.postorder_traversal())
 
-#Search
-print(treeRootNode.search(100))
+# #Search
+# print(treeRootNode.search(100))
+
+
+
+#Depth First Search
+'''
+1. In DFS we needs stack so we use Recursive method
+2. DFS can be tackled by three ways
+   A. In Order Traversal
+   B. Pre Order Traversal
+   C. Post Order Traversal
+3. So all 3 traversals are nothing but DFS in different ways
+'''
+
+#Breadth First Search
+'''
+1. In BFS we needs Queue so we use Iterative method
+'''
+def bfs(root):
+    if root is None:
+        return
+    
+    queue = [root]   # Start with Dad
+    
+    while len(queue) > 0:
+        current = queue[0]      # First person in line
+        print(current.val)      # Print 1st Element
+        queue = queue[1:]       # Remove them from the line
+        
+        if current.left is not None:
+            queue.append(current.left)    # Add left child
+        
+        if current.right is not None:
+            queue.append(current.right)   # Add right child
