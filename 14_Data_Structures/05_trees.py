@@ -174,3 +174,10 @@ def bfs(root):
         
         if current.right is not None:
             queue.append(current.right)   # Add right child
+            
+            
+            
+#-----------------------
+'''Deletion of Node in tree'''
+'''Playing with Structure of tree'''
+#-----------------------
