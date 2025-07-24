@@ -180,4 +180,5 @@ def bfs(root):
 #-----------------------
 '''Deletion of Node in tree'''
 '''Playing with Structure of tree'''
+'''Heap (Min heap and Max heap) -> Easy Concept'''
 #-----------------------
