@@ -1,0 +1,61 @@
+Infix: Operands inside operators   A+B
+Prefix: Operands before operators  +AB
+Postfix: Operands after operators  AB+
+
+Questions:
+1. Convert Infix to Postfix (Imp)
+2. Convert Infix to Prefix  (Based on qs 1)
+
+Question 1 logic
+_________________
+-Use stack for operators.
+-Scan the expression left to right.
+-If operand → add to result.
+-If operator → Pop operators with higher or equal precedence from stack to result.
+             → Push current operator to stack.
+-If ( → push to stack.
+-If ) → pop till ( is found.
+-At the end, pop everything from stack.
+
+Infix: ( A + B ) * C
+Expected Postfix: A B + C *
+
+| Operator | Precedence | Associativity |
+| -------- | ---------- | ------------- |
+| `*`      | 2          | Left to Right |
+| `+`      | 1          | Left to Right |
+
+| Step | Character | Action                   | Stack | Output     |
+| ---- | --------- | ------------------------ | ----- | ---------- |
+| 1    | `(`       | Push to stack            | (     |            |
+| 2    | `A`       | Operand → add to output  | (     | A          |
+| 3    | `+`       | Operator → push to stack | ( +   | A          |
+| 4    | `B`       | Operand → add to output  | ( +   | A B        |
+| 5    | `)`       | Pop till `(` found       |       | A B +      |
+| 6    | `*`       | Operator → push to stack | \*    | A B +      |
+| 7    | `C`       | Operand → add to output  | \*    | A B + C    |
+| 8    | End       | Pop stack                |       | A B + C \* |
+
+
+
+Question 2 logic
+_________________
+-Reverse the infix expression.
+-Swap all ( with ) and vice versa.
+-Convert the modified expression to postfix.
+-Reverse the postfix result → this is your prefix expression.
+
+1. (A + B) * C     → Infix Expression
+2. C * (B + A)     → Reverse the expression
+3. C * ) B + A (   → Swap brackets    C * ) B + A (
+4. C * ( B + A )   → Convert to postfix (use previous logic)  C B A + *
+5. Reverse C B A + * → * + A B C 
+
+
+ADVANCED
+| Conversion        | Direction     | Logic                           |
+| ----------------- | ------------- | ------------------------------- |
+| Postfix ➡️ Infix  | Left to right | Stack: `op2 op1 → (op1 op op2)` |
+| Prefix ➡️ Infix   | Right to left | Stack: `op1 op2 → (op1 op op2)` |
+| Postfix ➡️ Prefix | Left to right | Stack: `op2 op1 → op op1 op2`   |
+| Prefix ➡️ Postfix | Right to left | Stack: `op1 op2 → op1 op2 op`   |
