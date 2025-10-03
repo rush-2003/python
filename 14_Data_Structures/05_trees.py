@@ -181,4 +181,60 @@ def bfs(root):
 '''Deletion of Node in tree'''
 '''Playing with Structure of tree'''
 '''Heap (Min heap and Max heap) -> Easy Concept'''
+'''Serilization and Deserilization'''
 #-----------------------
+
+
+
+# Deletion
+class Solution:
+    def deleteNode(self, root, key):
+        if not root:
+            return None
+
+        if key < root.val:
+            root.left = self.deleteNode(root.left, key)
+        elif key > root.val:
+            root.right = self.deleteNode(root.right, key)
+        else:
+            # Case 1: No child
+            if not root.left and not root.right:
+                return None
+            
+            # Case 2: One child
+            if not root.left:
+                return root.right
+            if not root.right:
+                return root.left
+            
+            # Case 3: Two children
+            # Option A: use inorder successor
+            successor = self.findMin(root.right)
+            root.val = successor.val
+            root.right = self.deleteNode(root.right, successor.val)
+
+            # Option B (alternative): use inorder predecessor
+            # predecessor = self.findMax(root.left)
+            # root.val = predecessor.val
+            # root.left = self.deleteNode(root.left, predecessor.val)
+
+        return root
+
+    def findMin(self, node):
+        while node.left:
+            node = node.left
+        return node
+
+    def findMax(self, node):
+        while node.right:
+            node = node.right
+        return node
+    
+    
+    
+#Preorder Serilization
+def serialize(node):
+    if not node:
+        return "#"
+    return f"{node.val},{serialize(node.left)},{serialize(node.right)}"
+
