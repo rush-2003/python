@@ -1,23 +1,3 @@
-# My Personal Approach
-arr = [2, 1, 3]
-stack = [-1]*len(arr)
-
-for i in range(len(arr)-2, -1, -1):
-    if stack[i+1] == -1:
-        if arr[i] < arr[i+1]:
-            stack[i] = arr[i+1]
-        else:
-            stack[i] = -1
-    else:
-        if arr[i] > stack[i+1]:
-            stack[i] = -1
-        else:
-            stack[i] = stack[i+1]
-            
-print(stack)
-
-
-
 # Monotonic Stack Apporoach
 arr = [2, 1, 3]
 n = len(arr)

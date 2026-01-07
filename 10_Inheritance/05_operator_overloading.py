@@ -19,7 +19,7 @@ class Number:
         self.n1 = n1
         
     def __add__(self, num):
-        return print("me",self.n1 + num.n1)
+        return Number(self.n1 + num.n1)
         
 no1 = Number(1)
 no2 = Number(2)
