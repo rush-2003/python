@@ -1,0 +1,144 @@
+1. Public, Private, Protected
+Access Specifiers
+public—None, Protected—(_), Private—(__)
+Public attributes can be accessed anywhere
+Protected attributes can be accessed in same class & child class
+Private attributes can be accessed in same class only
+Private should be accessed via methods; protected may be accessed directly in subclasses.
+Protected can be inherited and can be directly used in child class
+Private can be inherited but can be accessed only via functions of parent class
+Name mangling: python changes __privarteVaribale to _className__privarteVaribale
+obj._ClassName__privateVar  # works, but DON'T do this
+Protected in Python is a convention, not an access restriction.
+
+2.
+A. Encapsulation = Wrapping data + methods together and controlling access to them (Access Specifier)
+Access Modifiers — Public, Protected, Private
+Getter and Setter Functions — Controlled Access
+Classes — Data + methods together
+
+B. Inheritance
+Give rise to parent child relation
+Allows Code Reusability, Logical hierarchy, Polymorphism
+Single Inheritance — One child one parent
+Multilevel Inheritance — Grandparent - Parent - Child
+Multiple Inheritance — One child multiple parents (Method Resolution Order)
+Hierarchal Inheritance — One Parent Multiple Children
+Hybrid Inheritance
+
+Method Overriding —
+- Parent has a function named show()
+- Child has a function named show()
+- Now in inheritance if I called parent method using child object then its possible
+- But in function overriding I called show function (in our case) then child method will be called
+- This is called overriding of the function
+- Super() keyword is used in case we want to call parent function in method overriding
+
+Method Resolution Order
+- Parent1 Class -> show()
+- Parent2 Class -> show()
+- Child (P1, P2) -> child.Show -- Which function to run P1'show or P2'show
+- What MRO does is [c -> p1 -> p2 -> Object]. Python checks the show function in this order
+- The class where first show() function is found is executed
+
+Diamond Problem
+class A:
+     def show(self): 
+         print("A") 
+
+class B(A):
+     def show(self): 
+         print("B") 
+
+class C(A):
+     def show(self): 
+        print("C")
+
+class D(B, C):
+    pass 
+
+d = D()
+d.show()
+
+Both B and C override show() from A.
+So which show() should D use? → Ambiguity
+
+MRO Order: [D, B, C, A, object]
+Python follows this order and calls B.show() first.
+
+Note:
+There are 2 methods 
+	A. isSubclass() | checks for class-class relationship
+	B. isInstance() | checks for class-object relationship
+
+Composition Vs Inheritance
+- Inheritance: Get properties of parent class in child class | Tightly coupled
+- Composition: Make object of one class into another class | Loosely coupled
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+C. Polymorphism
+1. Poly = many, morph = forms == Many Forms
+2. Two functions same name different behaviour
+3. Types
+	A. Method Overriding
+	B. Operator Overloading | print(1+2) and print("Hi"+"Hello") behind the scenes int.__add__(1,2) str.__add__("Hi", "Hello")
+	C. Function polymorphism | len([1,2,3,4]) and len("Hello")
+
+Function Overloading is NOT possible in python
+- If done than previous method is overwritten
+- Method overloading is simulated using 
+	A. Default Arguments
+	B. Variable Arguments — *args
+	C. *args + *kwargs
+
+DUCK TYPING
+- No inheritance
+- Behavior-based polymorphism
+
+class File:
+    def read(self):
+        print("Reading file")
+
+class Socket:
+    def read(self):
+        print("Reading socket")
+
+def process(obj):
+    obj.read()
+
+1. Objects, Class, Attributes, Methods
+2. Constructor / Dündar Methods
+Operator Overloading
+Polymorphism, Abstraction
+3. Function Overloading, Operator Overloading
+
+D. Abstraction
+- Hiding implementation details and showing only the essential features to the user.
+- Focus on what an object does, not how it does it.
+- Lets programmers use objects without knowing internal workings.
+- Abstraction in Python is Achieved via — Abstraction Base Class (ABC)
+
+from abc import ABC, abstractmethod
+class Vehicle(ABC):
+ 
+    @abstractmethod
+    def start(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+Vehicle cannot be instantiated.
+Any child class must implement start() and stop().
+
+class Car(Vehicle):
+    def start(self):
+        print("Car started")
+
+    def stop(self):
+        print("Car stopped")
+
+my_car = Car()
+my_car.start()  # Car started
