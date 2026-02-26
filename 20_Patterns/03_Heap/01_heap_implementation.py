@@ -1,5 +1,5 @@
 # Identification
-# K + Largest/Smallest
+# K + Largest/Smallest | Sorting
 # K = heap size
 # 2 types heap — min_heap | max_heap
 
@@ -49,3 +49,6 @@ for i in arr:
     if len(min_heap)>k:
         heapq.heappop(min_heap)
 print(min_heap[0])
+
+
+'''Check concept of pair priority queue —— (nums[index], index)'''
