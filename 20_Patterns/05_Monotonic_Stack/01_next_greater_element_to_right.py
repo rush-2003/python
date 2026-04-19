@@ -11,7 +11,7 @@
 
 # Algorithm
 # Basically traverse from right to left
-# At elery element check we need to check its right side elements
+# At every element we need to check its right side elements
 # So we check stack 
 # If stack is empty answer is -1
 # If stack[-1] is greater than current element then answer is stack[-1]
