@@ -9,7 +9,7 @@
 
 # Solution
 # Pick a bar
-# Expand it in bot ways
+# Expand it in both ways
 # Check how much expansion is possible in both was
 # Calulate area
 
