@@ -1,0 +1,13 @@
+Given: Array | Number
+Asked: Subarray | Substring
+Also asked for: Largest | Smallest
+Window size - Given | Asked
+
+We will find 2 types of Sliding Window Question:
+1. Fixed Size Window
+2. Variable Size Window
+
+Note: If I know brute force and I want to check if I can optimize or Not
+- Check for 1 thing
+1. Am I doing repetative work?
+

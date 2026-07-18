@@ -28,23 +28,31 @@
 
 arr = [12, -1, -7, 8, -15, 30, 13, 28]
 k = 3
-i = 0
-j = 0
-neg = []
+
+negativeElements = []
+neg = 0
+
 ans = []
-while j <= len(arr)-1:
+
+i, j = 0, 0
+
+while j < len(arr):
     if arr[j] < 0:
-        neg.append(arr[j])
+        negativeElements.append(arr[j])
     
-    if (j-i+1) != k:
-        j = j + 1
+    if j < k-1:
+        j += 1
     else:
-        if len(neg)>0:
-            ans.append(neg[0])
+        if neg < len(negativeElements):
+            ans.append(negativeElements[neg])
         else:
             ans.append(0)
-        if neg and arr[i] == neg[0]:
-            neg.pop(0)
-        i = i + 1
-        j = j + 1
+        
+        if neg < len(negativeElements)  and arr[i] == negativeElements[neg]:
+            neg += 1
+        
+        i += 1
+        j += 1
+        
+print(negativeElements)
 print(ans)
