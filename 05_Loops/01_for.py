@@ -18,6 +18,7 @@ for i in t:
     print(i)
     
 # For with else
+# If for loop is not terminated by break statement then else block will be executed
 lists = ["I", "am", "good", "boy"]
 for i in lists:
     print(i)
