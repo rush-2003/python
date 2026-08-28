@@ -1,0 +1,30 @@
+What we do in recurssion
+Recurssion = Choices + Descisions
+
+— Make the input smaller
+   |— We dont make input smaller it becomes smaller
+   |— We take some decision (Primary Task)
+   |— Consequences of those decision make the input smaller (Secondary Task)
+
+— Recurssion - Decision Space
+   |— How to identify if a problems is recursive or not
+   |— We have some choices to make and decisions to take
+
+— Recursive Tree
+   |— Representation of the decisions taken
+   |— Input Output Method
+        |— We have some input and we have to initilize the output with something
+        |— Number of branches = number of choices
+        |— At leaf node input is empty and output is expected rersult 
+    
+    General Format of Recursive Tree
+
+                op, ip
+                   /\
+    op1, smaller ip  op2, smaller ip
+         /\                /\
+        .. ..             .. ..
+
+— 2 steps to solve recursion problems
+    |— Build recursive Tree
+    |— Fuck recursion the problem aka write the code
