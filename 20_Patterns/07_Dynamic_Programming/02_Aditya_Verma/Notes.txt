@@ -1,0 +1,6 @@
+1. Identification
+    |- Enhanced Recurssion
+    |- Choices and Decisions
+    |- Optimial (Maximum, Minimum, Largest, Smallest)
+
+2. Recurssion —> Memoization (Top Down) —> Tabulation (Bottom Up)
